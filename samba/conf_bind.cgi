@@ -17,19 +17,19 @@ print &ui_form_start("save_bind.cgi", "post");
 print &ui_table_start($text{'bind_title'}, undef, 2);
 
 print &ui_table_row($text{'bind_local'},
-	&yesno_input("winbind enable local accounts", "local"));
+	&yesno_input("winbind enable local accounts", &getval("local")),20);
 
 print &ui_table_row($text{'bind_trust'},
-	&yesno_input("winbind trusted domains only", "trust"));
+	&yesno_input("winbind trusted domains only", &getval("trust")),20);
 
 print &ui_table_row($text{'bind_users'},
-	&yesno_input("winbind enum users", "users"));
+	&yesno_input("winbind enum users", &getval("users")),20);
 
 print &ui_table_row($text{'bind_groups'},
-	&yesno_input("winbind enum groups", "groups"));
+	&yesno_input("winbind enum groups", &getval("groups")),20);
 
 print &ui_table_row($text{'bind_defaultdomain'},
-	&yesno_input("winbind use default domain", "defaultdomain"));
+	&yesno_input("winbind use default domain", &getval("defaultdomain")),20);
 
 print &ui_table_row($text{'bind_realm'},
 	&ui_textbox("realm", &getval("realm"), 20));
