@@ -15,7 +15,7 @@ $global = &get_share("global");
 &error_setup($text{'bind_err'});
 &setval("winbind enable local accounts", $in{'local'} ? "yes" : "no");
 
-&setval("winbind trusted domains only", $in{'trust'} ? "yes" : "no");
+&setval("winbind scan trusted domains", $in{'trust'} ? "yes" : "no");
 
 &setval("winbind enum users", $in{'users'} ? "yes" : "no");
 
